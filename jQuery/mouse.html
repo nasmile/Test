@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='utf-8'>
+		<title>mouse</title>
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript">
+
+			var x=0;
+			var y=0;
+
+			$(document).ready(function(){
+				//点击事件
+				$("button").click(function(){
+					//slideToggle() 方法通过使用滑动效果（高度变化）来切换元素的可见状态
+					$(".clicktest").slideToggle();
+				});
+				//触发、或将函数绑定到指定元素的 double click 事件
+				$(".clicktest").dblclick(function(){
+					$("button").click();
+				});
+				//鼠标指针进入元素时发生的事件
+				$(".mouseeltest").mouseenter(function(){
+					$(".mouseeltest").css("background-color","#080");
+				});
+				//鼠标指针离开元素时发生的事件
+				$(".mouseeltest").mouseleave(function(){
+					$(".mouseeltest").css("background-color","#E9E");
+				});
+				//鼠标按下时发生的事件
+				$(".mousedowntest").mousedown(function(){
+					$(".mousedowntest").css("text-indent","5em");
+				});
+				//鼠标移动
+				//鼠标移动范围的确定，以及e参数
+				$(".mousemovetest").mousemove(function(e){
+					$("span").text(e.pageX + "," + e.pageY);
+				});
+				$(".mouseouttest").mouseout(function(){
+					$(".mouseouttest").css("font-style","italic");
+				});
+				//松开鼠标按钮时触发的事件
+				$(".mouseuptest").mouseup(function(){
+					$(".mouseuptest").hide();
+				});
+				//mouseover与mouseenter的区别
+				$("div.over").mouseover(function(){
+					$(".over span").text(x+=1);
+				});
+				$("div.enter").mouseenter(function(){
+					$(".enter span").text(y+=1);
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<button>点击这里</button>
+		<p class="clicktest">本段落通过dblclick事件触发上面这个按钮click事件</p>
+		<p class="mousedowntest">本段落触发mousedown事件</p>
+		<p class="mouseeltest">本段落触发mouseenter and mouseleave事件</p>
+		<p class="mouseouttest">鼠标移开时，改变字体</p>
+		<p class="mouseuptest">鼠标松开时，隐藏该文本</p>
+		<p class="mousemovetest">鼠标位于坐标：<span></span></p>
+		<div class="over">被触发的mouseover事件<span></span></div>
+		<div class="enter">被触发的mousceenter事件<span></span></div>
+	</body>
+</html>
