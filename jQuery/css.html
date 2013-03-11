@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='utf-8'>
+		<title>addclass</title>
+		<style type="text/css">
+			.horizontal{
+				float: left;
+				list-style: none;
+				margin: 10px;
+			}
+			.sub-level{
+				background: #ccc;
+			}
+		</style>
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('#selected-plays > li').addClass('horizontal');
+				$('#selected-plays li:not(.horizontal)').addClass('sub-level');
+			});
+		</script>
+	</head>
+	<body>
+		<ul id="selected-plays">
+			<li>Comedies
+				<ul>
+					<li><a href="/asyoulikeit/">As You Like It</a></li>
+					<li>All's Well That Ends Well</li>
+					<li>A Midsummer Night's Dream</li>
+					<li>Twelfth Night</li>
+				</ul>
+			</li>
+			<li>Targedies
+				<ul>
+					<li><a href="hamlet.pdf">Hamlet</a></li>
+					<li>Macbeth</li>
+					<li>Romeo and Juliet</li>
+				</ul>
+			</li>
+			<li>Histories
+				<ul>
+					<li>hENRY IV (<a href="mailto:henryiv@king.co.uk">email</a>)
+						<ul>
+							<li>Part I</li>
+							<li>Part II</li>
+						</ul>
+					</li>
+					<li><a href="http://www.shakespeare.co.uk/henryv.htm"></a>Henry V</li>
+					<li>Richard II</li>
+				</ul>
+			</li>
+		</ul>
+	</body>
+</html>
