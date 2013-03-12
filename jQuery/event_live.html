@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>事件委托live()</title>
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("p").live("click",function(){
+					$(this).slideToggle();
+				});
+				$("button").click(function(){
+					$("<p>This is a new paragraph.</p>").insertAfter("button")
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<p>这是一个段落</p>
+		<p>点击任意P元素会令其消失，包括本段落</p>
+		<button>在按钮后面插入新的p元素</button>
+	</body>
+</html>
