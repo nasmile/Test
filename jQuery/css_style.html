@@ -1,0 +1,23 @@
+<!-- 
+background-color 不能继承，其默认值是 transparent。transparent 有“透明”之意 
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>CSS样式</title>
+		<style type="text/css">
+			body{background-color: #080}
+			h1 {background-color: #111}
+			h2 {background-color: transparent}
+			p{background-color: rgb(250,0,250);}
+			p.nop{background-color: gray;padding:20px}
+		</style>
+	</head>
+	<body>
+		<h1>标题1</h1>
+		<h2>标题2</h2>
+		<p>段落</p>
+		<p class="nop">设置了内边距</p>
+	</body>
+</html>
