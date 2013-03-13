@@ -1,6 +1,10 @@
 <!-- border-collapse:separate  默认值。边框会被分开.
                 collapse设置是否把表格边框合并为单一的边框.
-                inherit 规定应该从父元素继承 border-collapse 属性的值. -->
+                inherit 规定应该从父元素继承 border-collapse 属性的值.
+event.target属性保存着发生事件的目标元素(也就是真正应该对事件做出响应的DOM元素)
+stopPropagation()阻止事件冒泡，IE浏览器中使用的是cancelBulle值为false 
+preventDefault()则可以在触发默认操作之前终止事件
+-->
 <html>
       <head>
           <style type="text/css">
@@ -25,12 +29,36 @@
             background-color:#A7C942;
             color:#fff;
             }
-          #customers tr.alt td 
+          #customers tr:nth-child(2n) td 
             {
             color:#000000;
             background-color:#EAF2D3;
             }
           </style>
+          <script type="text/javascript" src="jquery.js"></script>
+          <script>
+              //bin()  live()   delegate()触发后的this   e
+              $(document).ready(function(){
+                $(document.body).bind('click',function(e){
+                   //$(this).addEventListener("click",true);  事件捕获和事件冒泡
+                   //alert(e.target==this);  //false 
+                   //e.stopPropagation();  阻止了table元素的click事件,难道table标签是document.body的父元素？
+                   alert($(this).html());
+                });
+                $('table').live('click',function(e){
+                   //$(this).addEventListener("click",false);
+                   //alert(e.target==this);  false
+                   //e.stopPropagation();
+                   alert($(this).html());
+                });
+                $('table').delegate('td','click',function(e){
+                    //$(this).addEventListener("click",false);
+                    //alert(e.target==this);   true
+                    //e.stopPropagation();
+                    alert($(this).html());
+                });
+              });
+          </script>
       </head>
 
       <body>
@@ -45,7 +73,7 @@
               <td>Steven Jobs</td>
               <td>USA</td>
           </tr>
-          <tr class="alt">
+          <tr>
               <td>Baidu</td>
               <td>Li YanHong</td>
               <td>China</td>
@@ -55,7 +83,7 @@
               <td>Larry Page</td>
               <td>USA</td>
           </tr>
-          <tr class="alt">
+          <tr>
               <td>Lenovo</td>
               <td>Liu Chuanzhi</td>
               <td>China</td>
@@ -65,7 +93,7 @@
               <td>Bill Gates</td>
               <td>USA</td>
           </tr>
-          <tr class="alt">
+          <tr>
               <td>Nokia</td>
               <td>Stephen Elop</td>
               <td>Finland</td>

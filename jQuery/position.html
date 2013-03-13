@@ -1,26 +1,50 @@
+<!DOCTYPE html > 
 <html>
-     <head>
-     	   <meta charset='utf-8'>
-           <title>position</title>
-           <style type="text/css">
-                 #a{                 	
-					height:50px;
-					width:20px;
-					position: relative;
-					top:500px;
-					background:#666666;
-                 }
-                 #b {
-					height:10px;
-					width:10px;
-					position: absolute;
-					top:10px;
-					background: #CCCCCC;
-				}
-           </style>
-     </head>
-     <body>
-           <div id="a"></div>
-           <div id="b"></div>
-     </body>
+    <head>
+        <meta charset='utf-8'>
+        <title>100X100</title>
+        <style type="text/css">
+            #ma {
+                width: 300px;
+                height: 300px;
+                background-color: #333;
+                position:absolute;
+                /*left:(window.innerWidth - document.getElementById('ma').clientWidth)/2;
+                top:(window.innerHeight - document.getElementById('ma').clientHeight)/2;*/
+            }        
+            .mb {
+                width: 300px;
+                height: 300px;
+                position: relative;
+            }
+            .mc {
+                width: 100px;
+                height: 100px;
+                position: absolute;
+                top: 100px;
+                left: 100px;
+                background: #080;
+            }
+        </style>
+        <script type="text/javascript" src="jquery.js"></script>
+        <script>
+            $(document).ready(function(){
+                window.onresize = resize;
+                function resize(){
+                    $('#ma').css({
+                        'top' :(window.innerHeight - document.getElementById('ma').clientHeight)/2,
+                        'left' : (window.innerWidth - document.getElementById('ma').clientWidth)/2
+                    });
+                }
+                resize();
+            });
+        </script>
+    </head>
+    <body>
+        <div id="ma">
+            <div class="mb">
+                <div class="mc"></div>     
+            </div>
+        </div>
+    </body>
 </html>

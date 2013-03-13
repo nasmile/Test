@@ -1,0 +1,54 @@
+<!--一、键盘事件分为两种：1、直接对按键给出响应的事件（keyup、keydown）。2、对文本输入给出响应的时间（keypress）
+	二、event.which  键位序号
+	三、属性值		说明
+		Control		获取一个值，该值指示是否曾按下Ctrl键
+		KeyCode		获取KeyDown或KeyUp事件的键盘代码
+		KeyData		获取KeyDown或KeyUp事件的键数据
+		KeyData		获取KeyDown或KeyUp事件的键数据
+		KeyValue	获取KeyDown或KeyUp事件的键盘值
+		Modifiers	获取KeyDown或KeyUp事件的修饰符标志。这些标志指示按下的Ctrl、Shift和Alt键的组合
+		Shift		获取一个值，该值指示是否曾按下Shift键 
+	四、keydown、keyup以及keypress之间的区别
+	    1、KeyPress 只能捕获单个字符，KeyDown 和KeyUp 可以捕获组合键。
+	    2、KeyPress 可以捕获单个字符的大小写
+	       KeyDown和KeyUp 对于单个字符捕获的KeyValue 都是一个值，也就是不能判断单个字符的大小写。
+	    3、KeyPress 不区分小键盘和主键盘的数字字符。KeyDown 和KeyUp 区分小键盘和主键盘的数字字符。
+	    4、其中PrScrn 按键KeyPress、KeyDown和KeyUp 都不能捕获
+-->
+<!DOCTYPE THML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				//i、y来计算keydown和keypress捕获的键
+				var i=0;
+				var y=0;
+				$("input").keydown(function(event){
+					//var keyd=String.fromCharCode(e.KeyCode);
+					alert(event.KeyValue);  //undefined
+					//$("span.wordd").text(keyd);
+					$("span.down").text(y+=1);
+					$("input").css("background-color","red");
+				});
+				$("input").keyup(function(){
+					$("input").css("background-color","blue");
+				});
+				$("input").keypress(function(e){
+					//var keyp=String.fromCharCode(e.KeyCode);
+					//$("span.wordp").text(keyp);
+					$("span.press").text(i+=1);
+					
+				});
+			});
+		</script>
+	</head>
+	<body>
+		Enter your name<input type="text"/>
+		<p>Keydown捕获键数:<span class="down">0</span></p>
+		<p>Keypress捕获键数:<span class="press">0</span></p>
+		<p>Keydown单个字符的大小写:<span class="wordd"></span></p>
+		<p>Keypress单个字符的大小写:<span class="wordp"></span></p>
+	</body>
+</html>
