@@ -1,4 +1,11 @@
-<!DOCTYPE html>
+<!-- 事件委托的方法包括live() delegate() die() undelegate()
+	而这些方法都是为被选的元素附加一个或多个事件处理程序,并规定这些事件发生时运行的程序
+	事件委托应该是指将每个单元素的事件委托给其父元素，然后当触发某个事件时，只要执行其父元素就行。
+$(selector).live(event,data,function)
+$(selector).delegate(childSelector,event,data,function)
+$(selector).die(event,function)
+$(selector).undelegate(selector,event,function)
+<!DOCTYPE html> -->
 <html>
 	<head>
 		<meta charset="utf-8">
