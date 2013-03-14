@@ -1,0 +1,87 @@
+<!-- rgba中的透明度不会影响到元素其他的属性 -->
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>rgba与opacity的区别</title>
+		<style type="text/css">
+			li.opacity{
+    			float: left;
+    			width: 50px;
+    			height: 50px;
+  			}
+  			li.opacity1 {
+     			background: rgb(255,255,0);
+     			opacity: 1;
+  			}
+  			li.opacity2 {
+     			background: rgb(255,255,0);
+     			opacity: 0.8;
+  			}
+  			li.opacity3 {
+     			background: rgb(255,255,0);
+     			opacity: 0.6;
+  			}
+  			li.opacity4 {
+     			background: rgb(255,255,0);
+     			opacity: 0.4;
+  			}
+  			li.opacity5 {
+     			background: rgb(255,255,0);
+     			opacity: 0.2;
+  			}
+  			li.opacity6 {
+     			background: rgb(255,255,0);
+     			opacity: 0;
+  			}
+  			li.rgba {
+			    float: left;
+			    width: 50px;
+			    height: 50px;
+			}
+			  li.rgba1 {
+			    background: rgba(255,255,0,1);
+			}
+			  li.rgba2 {
+			    background: rgba(255,255,0,0.8);
+			}
+			  li.rgba3 {
+			    background: rgba(255,255,0,0.6);
+			}
+			  li.rgba4 {
+			    background: rgba(255,255,0,0.4);
+			}
+			  li.rgba5 {
+			    background: rgba(255,255,0,0.2);
+			}
+			  li.rgba6 {
+			    background: rgba(255,255,0,0);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="example-opacity">
+			<P>Opacity效果演示</P>
+			<ul>
+				<li class="opacity opacity1">100%</li>
+				<li class="opacity  opacity2">80%</li>
+				<li class="opacity  opacity3">60%</li>
+				<li class="opacity  opacity4">40%</li>
+				<li class="opacity  opacity5">20%</li>
+				<li class="opacity  opacity6">0</li>
+			</ul>
+		</div>
+		<br></br>
+		<P>CSS中RGBA效果演示</P>
+		<div class="example-rgbs">
+			<ul>
+				<li class="rgba rgba1">1</li>
+				<li class="rgba rgba2">0.8</li>
+				<li class="rgba rgba3">0.6</li>
+				<li class="rgba rgba4">0.4</li>
+				<li class="rgba rgba5">0.2</li>
+				<li class="rgba rgba6">0</li>
+			</ul>
+		</div>
+	</body>
+</html>
