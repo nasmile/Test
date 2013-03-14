@@ -29,7 +29,7 @@ preventDefault()则可以在触发默认操作之前终止事件
             background-color:#A7C942;
             color:#fff;
             }
-          #customers tr:nth-child(2n) td 
+          #customers tr:nth-child(2n)
             {
             color:#000000;
             background-color:#EAF2D3;
@@ -37,12 +37,14 @@ preventDefault()则可以在触发默认操作之前终止事件
           </style>
           <script type="text/javascript" src="jquery.js"></script>
           <script>
-              //bin()  live()   delegate()触发后的this   e
+              //bin()  live()   delegate()触发后的this   
+              //e：window下封装的一个全局事件对象。
               $(document).ready(function(){
                 $(document.body).bind('click',function(e){
                    //$(this).addEventListener("click",true);  事件捕获和事件冒泡
                    //alert(e.target==this);  //false 
                    //e.stopPropagation();  阻止了table元素的click事件,难道table标签是document.body的父元素？
+                   //e.currentTarget:冒泡前的当前触发事件的DOM对象, 等同于this.
                    alert($(this).html());
                 });
                 $('table').live('click',function(e){
@@ -53,7 +55,19 @@ preventDefault()则可以在触发默认操作之前终止事件
                 });
                 $('table').delegate('td','click',function(e){
                     //$(this).addEventListener("click",false);
-                    //alert(e.target==this);   true
+                    //alert(e.target==this);   //true
+                    //e.stopPropagation();
+                    alert($(this).html());
+                });
+                $('td').live('click',function(e){
+                    //$(this).addEventListener("click",false);
+                    //alert(e.target==this);   //true
+                    //e.stopPropagation();
+                    alert($(this).html());
+                });
+                $('td').bind('click',function(e){
+                    //$(this).addEventListener("click",false);
+                    //alert(e.target==this);   //true
                     //e.stopPropagation();
                     alert($(this).html());
                 });

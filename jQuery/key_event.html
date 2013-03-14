@@ -26,8 +26,8 @@
 				var i=0;
 				var y=0;
 				$("input").keydown(function(e){
-					//var keyd=String.fromCharCode(e.KeyCode);
-					//alert(e.KeyValue);  //undefined
+					var keyd=String.fromCharCode(e.KeyCode);
+					alert(keyd);
 					//$("span.wordd").text(keyd);
 					$("span.down").text(y+=1);
 					$("input").css("background-color","red");
@@ -40,6 +40,10 @@
 					//$("span.wordp").text(keyp);
 					$("span.press").text(i+=1);
 					
+				});
+				$("p").click(function(e){
+					alert(e.pageX);
+					alertxxx(e);
 				});
 			});
 		</script>
