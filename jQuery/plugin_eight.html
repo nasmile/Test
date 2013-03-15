@@ -1,0 +1,89 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>开发插件</title>
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript">
+			//立即调用函数表达式
+			//求和
+			(function($){
+				$.sum = function(array){
+					var total = 0;
+					//遍历数组值
+					$.each(array,function(index, value){
+						value = $.trim(value);
+						value = parseFloat(value) || 0;
+
+						total +=value;
+					});
+					return total;
+				};
+				
+			})(jQuery);
+			//求平均值
+			(function($){
+				$.average = function(array){
+					if($.isArray(array){
+						return $.sum(array) / array.length;
+					}
+					return '';
+				};
+			})(jQuery);
+			$(document).ready(function($){
+				var $inventory = $('#inventory tbody');
+				//qty是否可以随意命名
+				var quantities = $inventory.find('td:nth-child(2)').map(function(index, qty){
+					return $(qty).text();
+				}).get();
+				var prices = $inventory.find('td:nth-child(3)').map(function(index,qty){
+					return $(qty).text();
+				}).get();
+				var sum = $.sum(quantities);
+				var average = $.average(prices);
+				$('#sum').find('td:nth-child(2)').text(sum);
+				$('#average').find('td:nth-child(3)').text(average.toFixed(2));
+			});
+		</script>
+	</head>
+	<body>
+		<table id="inventory">
+			<thead>
+				<tr class="one">
+					<th>Product</th>
+					<th>Quantity</th>
+					<th>Price</th>
+				</tr>
+			</thead>
+			<tfoot>
+				<tr id="sum" class="two">
+					<td>Total</td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr id="average">
+					<td>Average</td>
+					<td></td>
+					<td></td>
+				</tr>
+			</tfoot>
+			<tbody>
+				<tr>
+					<td>Spam</td>
+					<td>4</td>
+					<td>2.50</td>
+				</tr>
+				<tr>
+					<td>Egg</td>
+					<td>12</td>
+					<td>4.32</td>
+				</tr>
+				<tr>
+					<td>Gourmet Spam</td>
+					<td>14</td>
+					<td>7.89</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>
