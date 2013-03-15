@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>插件的使用</title>
+		<script type="text/javascript" scr="jquery.js"></script>
+		<script type="text/javascript" src="cycle/jquery.cycle.js"></script>
+		<style type="text/css">
+			img{
+				width: 200px;
+				height: 200px;
+			}
+			li{
+				float: left;
+			}
+		</style>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('#book').cycle({
+					timeout:2000, //指定切换幻灯片之间等待的毫秒数
+					speed:200,   //切换本身要花的毫秒数
+					pause:true  //鼠标进入时暂停播放
+				});
+				/*$('<div id="books-controls"></div>').insertAfter('#book');
+				$('<button>Pause</button>').click(function(){
+					$('#book').cycle('pause');  //暂停
+					return false;
+				}).appendTo('#books-controls');
+				$('<button>Resume</button>').click(function(){
+					$('#book').cycle('resume');  //播放
+					return false;
+				}).appendTo('#books-controls');
+				$('#books').hover(function(){
+					$('#book .title').animate({
+						backgroundColor:'#eee',
+						color:'#000'
+					},1000);
+				});*/
+			});
+		</script>
+	</head>
+	<body>
+		<h1>Select jQuery Books</h1>
+		<ul id="books">
+			<li>
+				<img src="images/4.jpg" alt="jQuery 1.4 Reference Guide" />
+				<div class="title">jQuery 1.4 Reference Guide</div>
+				<div class="author">Karl Swedberg</div>
+				<div class="author">Jonathan Chaffer</div>
+			</li>
+			<li>
+				<img src="images/5.jpg" alt="jQuery 1.4 Reference Guide" />
+				<div class="title">jQuery Plugin Development</div>
+				<div class="author">Giulio Bai</div>
+			</li>
+		</ul>
+	</body>
+</html>
