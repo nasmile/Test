@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>undefined nan null小小测试</title>
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				//1、类型
+				var reValue=[,,]; 
+				var a;
+				var a1 = null;
+				var a2 = NaN;
+				var a3 = undefined;
+				
+				alert(typeof reValue);//object
+				alert("a没有赋值"+ typeof a); //undefined
+				alert("null typeof为"+ typeof a1); //object
+				alert("NaN typeof为" + typeof a2);  //number
+				alert("undefined typeof为"+ typeof a3);  //undefined
+
+				alert("null与NaN!=比较:" + a1 == a2); //显示"false"
+				alert("null与NaN!=比较" + a1 != a2); //显示"true"
+
+				alert("null与undefined==比较" + a1 == a3); //显示"true"
+				alert("null与undefined!=比较" + a1 != a3); //显示"false"
+
+				alert("NaN与undefined==比较" + a2 == a3); //显示"false"
+				alert("NaN与undefined!=比较" + a2 != a3); //显示"true"
+			});
+		</script>
+	</head>
+	<body>
+		<div class="test"></div>
+	</body>
+</html>

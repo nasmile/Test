@@ -1,0 +1,74 @@
+<!-- 这样写主要练习的好像的不是before以及after，而是border的属性 -->
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>三角形</title>
+		<style type="text/css">
+			#triangle{
+				width: 100px;
+				height: 100px;
+				background:#FCC;
+				border:1px dashed  #F30; 
+				/*border-color:#f00 #FCC #FCC #FCC;*/
+				position: relative;
+			}
+			#com_a{
+				width: 100px;
+				height: 100px;
+				position: absolute;
+			}
+			#triangle:after{ 
+				content: "";
+				border-top:50px solid transparent;
+				border-left:50px solid #FF3300;
+				border-bottom:50px solid transparent;
+				position: absolute;
+				left: 100px;
+			}
+			#triangle:before{ 
+				content: "";
+				border-top:50px solid transparent;
+				border-right:50px solid #FF3300;
+				border-bottom:50px solid transparent;
+				position: absolute;
+				left: -50px;
+			}
+			#com_a:after{ 
+				content: "";
+				border-left:50px solid transparent;
+				border-right:50px solid transparent;
+				border-bottom:50px solid #123;
+				position: absolute;
+				top:-50px;
+			}
+			#com_a:before{ 
+				content: "";
+				border-top:50px solid #123;
+				border-left:50px solid transparent;
+				border-right:50px solid transparent;
+				position: absolute;
+				top:100px;
+			}
+			
+		</style>
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				window.onresize = resize;
+				function resize(){
+					$("#triangle").css({
+						'top' :(window.innerHeight - document.getElementById('triangle').clientHeight)/2,
+	                    'left' : (window.innerWidth - document.getElementById('triangle').clientWidth)/2
+					});
+				}
+				resize();
+			});
+		</script>
+	</head>
+	<body>
+		<div id="triangle">
+			<div id="com_a"></div>
+		</div>
+	</body>
+</html>
