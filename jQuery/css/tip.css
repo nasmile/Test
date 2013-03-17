@@ -1,0 +1,22 @@
+.tip{
+	padding: 5px 10px;
+	margin-left: 15px;
+	border: 1px solid #F8D19F;
+	border-radius: 3px;
+	background-color: #FDFBBB;
+	color: #d07807;
+	font-size: 12px;
+	position: absolute;
+}
+.tip:before,.tip before, .tip:after,.tip after{
+	content: attr(data-content);
+	position: absolute;
+}
+.tip:before,.tip before{
+	color: #F8D19F;
+	left: -10px;
+}
+.tip:after,.tip after{
+	color: #FDFBBB;
+	left: -8px;
+}
