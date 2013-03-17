@@ -1,0 +1,31 @@
+#student{
+	width: 60%;
+	height: 60%;
+	border-spacing: 5px;
+	border: #FFF solid 1px;
+	border-collapse: collapse;
+	text-align: center;
+	font-family: Arial;
+	position: relative;
+}
+#student:before{
+	content:"学生信息表";
+	position: absolute;
+	top:-30px;
+	left: 45%;
+}
+#student th,#student td{
+	border: #000 solid 1px;
+}
+#student th{
+	text-transform: capitalize;
+}
+a:link{
+	color: #F00;
+}
+a:visited{
+	color: #0F0;
+}
+a:hover{
+	color: #00F;
+}

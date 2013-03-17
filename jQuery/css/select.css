@@ -1,0 +1,26 @@
+元素选择器*/
+html{
+	color: #F00;
+}
+h1{
+	color: #0F0;
+}
+p{
+	color: #00F;
+}
+/*通配选择符*/
+*{
+	/*font-style: italic;*/
+	font-style: oblique;
+}
+/*类型选择器*/
+/*属性选择符*/
+[title]{
+	background-color: #FDC;
+}
+/*子元素选择*/
+ul > li{
+	font-weight: bold;
+}
+/*相邻元素的选择*/
+

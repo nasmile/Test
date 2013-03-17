@@ -1,3 +1,6 @@
+body{
+	margin-left: 50px;
+}
 a:link{
 	color:red
 } /*未访问的连接*/
@@ -8,7 +11,7 @@ a:hover{
 	color:blue
 }   /*鼠标移到连接上*/
 a:active{
-	color:#0C0
+	color:#000
 }  /*选定的连接*/
 a.agoogle:link{
 	text-decoration: none;
@@ -22,6 +25,14 @@ a.agoogle:hover{
 }
 a.agoogle:active{
 	text-decoration: overline;
+}
+p:first-line{
+	color: #00F;
+	font-variant: small-caps;
+}
+p:first-letter{
+	color: #F00;
+	font-size: large;
 }
 q:lang(no)
 {
