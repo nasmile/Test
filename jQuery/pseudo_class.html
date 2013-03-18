@@ -3,39 +3,23 @@
 	<head>
 		<meta charset="utf-8">
 		<title>伪类</title>
+		<link rel="stylesheet" type="text/css" href="css/pseudo_class.css">
 		<script type="text/javascript" src="jquery.js"></script>
-		<style type="text/css">
-			a:link{color:red} /*未访问的连接*/
-			a:visited{color:green} /*已访问过的连接*/
-			a:hover{color:blue}   /*鼠标移到连接上*/
-			a:active{color:#0C0}  /*选定的连接*/
-			a.agoogle:link{text-decoration: none;color:#F00;} /*color为什么不生效呢？*/
-			a.agoogle:visited{text-decoration: underline;}
-			a.agoogle:hover{text-decoration: line-through;}
-			a.agoogle:active{text-decoration: overline;}
-			li:first-child{
-				font-weight: bold;
-			}
-			li:nth-child(2){
-				color: #F00;
-			}
-			li:last-child{
-				text-decoration: underline;
-			}
-			li:only-child{
-				text-transform: uppercase;
-			}
-		</style>
-		<script type="text/javascript">
-			$(document).ready(function(){
-				alert($("li:first-child"));
-				alert($("li:nth-child(2)")); //[object object]
-			});
-		</script>
 	</head>
 	<body>
-		<p><a href="http://www.baidu.com">baidu连接的伪类</a></p>
-		<p><a href="http://www.google.com" class="agoogle">google连接的伪类</a></p>
+		<p>You can combine the :first-letter and :first-line pseudo-elements to add a special effect to the<br>first letter and the first line of a text!</p>
+		<p>
+			<a href="http://www.baidu.com">baidu连接的伪类</a>
+		</p>
+		<p>
+			<a href="http://www.google.com" class="agoogle">google连接的伪类</a>
+		</p>
+		lang定义前的样式：
+		<p>一些文本 <q>段落中的引用</q> 一些文本。</p>
+		lang定义后的样式：
+		<p>一些文本 <q lang="no">段落中的引用</q> 一些文本。</p>
+
+		focus 伪类在元素获得焦点时向元素添加背景色:<input/>
 		<div>
 			<ul>
 				<li>lina</li>

@@ -1,3 +1,4 @@
+<!-- cycle参数还没有完全弄明白，暂时先放着 -->
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -16,43 +17,30 @@
 		</style>
 		<script type="text/javascript">
 			$(document).ready(function(){
-				$('#book').cycle({
-					timeout:2000, //指定切换幻灯片之间等待的毫秒数
-					speed:200,   //切换本身要花的毫秒数
-					pause:true  //鼠标进入时暂停播放
+				//幻灯片插件，制作动画相册
+				$('.ads').cycle({
+					//效果：fade淡入淡出  shuffle交替  zoom  turnDown  curtainX水平挤压  scrollRight
+					fx:'fade', 
+					timeout:400,
+					/*pager:'num',
+					pagerEvent:'mouseover',
+					pauseOnPagerHoer:true,
+					activePagerClass:'current',*/
+					pagerAnchorBuilder:function(idx,slide){
+						idx += 1;
+						return '<li>'+ '</li>';
+					}
 				});
-				/*$('<div id="books-controls"></div>').insertAfter('#book');
-				$('<button>Pause</button>').click(function(){
-					$('#book').cycle('pause');  //暂停
-					return false;
-				}).appendTo('#books-controls');
-				$('<button>Resume</button>').click(function(){
-					$('#book').cycle('resume');  //播放
-					return false;
-				}).appendTo('#books-controls');
-				$('#books').hover(function(){
-					$('#book .title').animate({
-						backgroundColor:'#eee',
-						color:'#000'
-					},1000);
-				});*/
 			});
 		</script>
 	</head>
 	<body>
-		<h1>Select jQuery Books</h1>
-		<ul id="books">
-			<li>
-				<img src="images/4.jpg" alt="jQuery 1.4 Reference Guide" />
-				<div class="title">jQuery 1.4 Reference Guide</div>
-				<div class="author">Karl Swedberg</div>
-				<div class="author">Jonathan Chaffer</div>
-			</li>
-			<li>
-				<img src="images/5.jpg" alt="jQuery 1.4 Reference Guide" />
-				<div class="title">jQuery Plugin Development</div>
-				<div class="author">Giulio Bai</div>
-			</li>
-		</ul>
+		<div class="ads">
+			<ul class="ads">
+				<li><a href="#"><img src="images/1.jpg"></a></li>
+				<li><a href="#"><img src="images/2.jpg"></a></li>
+				<li><a href="#"><img src="images/3.jpg"></a></li>
+			</ul>
+		</div>
 	</body>
 </html>

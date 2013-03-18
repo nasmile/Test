@@ -1,0 +1,37 @@
+p.dotted {
+	border-style: dotted;
+}
+p.dashed {
+	border-style: dashed
+}
+p.solid {
+	border-style: solid;
+	border-color: #F890;
+	border-width: 15px 20px 25px;
+}
+p.double {
+	border-style: double
+}
+p.groove {
+	border-style: groove
+}
+p.ridge {
+	border-style: ridge
+}
+p.inset {
+	border-style: inset
+}
+p.outset {
+	border-style: outset solid
+}
+p.total{
+	border:medium double rgb(250,0,250);
+}
+table.one{
+	border-collapse: collapse;
+	border-spacing: 10px;
+}
+table.two{
+	border-collapse: separate;
+	border-spacing: 10px;
+}

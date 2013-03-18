@@ -1,0 +1,55 @@
+body{
+	margin-left: 50px;
+}
+a:link{
+	color:red
+} /*未访问的连接*/
+a:visited{
+	color:green
+} /*已访问过的连接*/
+a:hover{
+	color:blue
+}   /*鼠标移到连接上*/
+a:active{
+	color:#000
+}  /*选定的连接*/
+a.agoogle:link{
+	text-decoration: none;
+	color:#F00;
+} /*color为什么不生效呢？*/
+a.agoogle:visited{
+	text-decoration: underline;
+}
+a.agoogle:hover{
+	text-decoration: line-through;
+}
+a.agoogle:active{
+	text-decoration: overline;
+}
+p:first-line{
+	color: #00F;
+	font-variant: small-caps;
+}
+p:first-letter{
+	color: #F00;
+	font-size: large;
+}
+q:lang(no)
+{
+quotes: "~" "~"
+}
+input:focus{
+	background-color: #00F;
+}
+li:first-child{
+	font-weight: bold;
+}
+li:nth-child(2){
+	color: #F00;
+}
+li:last-child{
+	text-decoration: underline;
+}
+li:only-child{
+	text-transform: uppercase;
+}

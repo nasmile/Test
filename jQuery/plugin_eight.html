@@ -7,16 +7,21 @@
 		<script type="text/javascript">
 			//立即调用函数表达式
 			//求和
-			/*(function($){
-				$.sum = function(array){
+			(function($){
+				$.sum= function(array){
 					var total = 0;
 					//遍历数组值
-					$.each(array,function(index, value){
-						value = $.trim(value);
-						value = parseFloat(value) || 0;
-
+					for(var i=0;i<array.length;i++){
+						value = $.trim(array[i]);
+						value = parseFloat(value);
 						total +=value;
-					});
+					};
+					// $.each(array,function(index, value){
+					// 	value = $.trim(value);
+					// 	value = parseFloat(value) || 0;
+
+					// 	total +=value;
+					// });
 					return total;
 				};
 			})(jQuery);
@@ -28,7 +33,7 @@
 					}
 					return "";
 				};
-			})(jQuery);*/
+			})(jQuery);
 			//定义全局函数
 			/*(function($){
 				$.extend({
@@ -50,7 +55,7 @@
 				});
 			})(jQuery);*/
 			//将全局变量定义在一个对象中
-			(function($){
+			/*(function($){
 				$.mathUtils = {
 					sum: function(array){
 						var total = 0;
@@ -68,7 +73,7 @@
 						 return "";
 					}
 				};
-			});
+			});*/
 			$(document).ready(function($){
 				var $inventory = $('#inventory tbody');
 				//qty是否可以随意命名
@@ -80,8 +85,10 @@
 				}).get();
 				/*var sum = $.sum(quantities);
 				var average = $.average(prices);*/
-				var sum = $.mathUtils.sum(quantities);
-				var average = $.mathUtils.average(prices);
+				// var sum = $.mathUtils.sum(quantities);
+				// var average = $.mathUtils.average(prices);
+				var sum = $.sum(quantities);
+				var average = $.average(prices);
 				$('#sum').find('td:nth-child(2)').text(sum);
 				$('#average').find('td:nth-child(3)').text(average.toFixed(2));
 			});
@@ -111,7 +118,7 @@
 			<tbody>
 				<tr>
 					<td>Spam</td>
-					<td>4</td>
+					<td>aaa4ppp</td>
 					<td>2.50</td>
 				</tr>
 				<tr>
