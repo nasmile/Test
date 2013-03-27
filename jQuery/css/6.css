@@ -1,0 +1,127 @@
+/**{
+	margin: 0;
+	padding: 0;
+}
+nav{
+	margin: 50px;
+	width: 150px;
+}
+.list1 ul{
+	border: 1px solid #f00;
+	border-radius: 3px;
+	padding: 5px 10px 3px;
+}
+.list1 li{
+	list-style-type: none;
+	padding:3px 10px;
+}
+.list1 li+li{
+	border-top:1px solid #f00;
+}*/
+/*.list a{
+	text-decoration: none;
+	font:20px,helvetica,arial,sans-serif;
+	font-weight: 400;
+	color: #000;
+	background: #ffed53;
+}
+.list2 a:hover{
+	color: #069;
+}
+.list1 ul {
+	/*强制ul 包围浮动的li 元素*/
+/**	overflow:hidden;
+}
+.list2 li {
+	让li 元素水平排列
+	float:left;
+	/*去掉项目符号*/
+/*	list-style-type:none;
+}
+.list2 a {
+	/*让链接填满li 元素*/
+	/*display:block;
+	padding:0 16px;
+	/*去掉链接的下划线*/
+	/*text-decoration:none;
+	color:#999;
+}
+.list2 li + li a {border-left:1px solid #aaa;}
+.list2 a:hover {color:#555;}*//*/*/
+.multi_drop_menu{
+	font:1em helvetica,arial,sans-serif;
+}
+.multi_drop_menu a{
+	display: block;
+	color: #555;
+	background-color: #eee;
+	padding:.2em 1em;
+	border-width: 3px;
+	border-color: transparent;
+}
+.multi_drop_menu a:hover{
+	color: #fff;
+	background: #aaa;
+}
+.multi_drop_menu a:active{
+	background: #fff;
+	color: #ccc;
+}
+.multi_drop_menu *{
+	margin:0;
+	padding: 0;
+}
+.multi_drop_menu ul{
+	float: left;
+}
+.multi_drop_menu li{
+	float:left;
+	list-style-type: none;
+	position: relative;
+}
+.multi_drop_menu li a{
+	display: block;
+	border-right-style: solid;
+	background-clip: padding-box;
+	text-decoration: none;
+}
+.multi_drop_menu li:last-child a{
+	border-right-style: none;
+}
+.multi_drop_menu li ul{
+	display:none;
+}
+.multi_drop_menu li ul{
+	width: 9em;
+}
+.multi_drop_menu li li a{
+	border-right-style: none;
+	border-top-style: solid;
+}
+.multi_drop_menu li ul{
+	display: block;
+	position:absolute;
+	left:0;
+	top:100%;
+}
+.multi_drop_menu li li{
+	float: none;
+}
+.multi_drop_menu li li ul{
+	display: none;
+}
+.multi_drop_menu li ul{
+	display:none;
+	position: absolute;
+	left: 0;
+	top: 100%;
+}
+.multi_drop_menu li:hover > ul{
+	display:block;
+}
+.multi_drop_menu li li ul{
+	position: absolute;
+	left: 100%;
+	top:0;
+}
+
