@@ -12,7 +12,7 @@ import (
 
 var sourcehome = flag.String("src", ".", "set source home")
 var sourcetype = flag.String("type", "html|js|css", "set source file type")
-var passfile = flag.String("pass", "jquery.js", "this is not be calced")
+var passfile = flag.String("pass", "jquery.*\\.js", "this is not be calced")
 var recordfile = flag.String("rf", "", "record calc result to file")
 
 func main() {
@@ -84,10 +84,14 @@ func main() {
 
 	// 公布结果
 	fmt.Println("show result ...")
+	tl := int64(0)
 	for tp, lines := range result {
 		fmt.Println("    type :", tp)
 		fmt.Println("    line :", lines)
+		tl += lines
 	}
+
+	fmt.Println("total :", tl)
 
 	// 记录到文件
 	if *recordfile != "" {
