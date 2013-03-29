@@ -1,0 +1,42 @@
+<!-- 
+    NutzUI的jQuery插件测试页面
+    控件名称为 position
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>Nutz-UI jQuery插件 position</title>
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="css/zui.base.css">
+        <link rel="stylesheet" type="text/css" href="css/position.css">
+        <!-- JavaScript -->
+        <script type="text/javascript" src="jquery.js"></script>
+        <script type="text/javascript" src="js/position.js" ></script>
+        <style>
+
+        </style>
+        <script>
+            $(document).ready(function(){
+                adjust();
+                window.onresize = adjust;
+            });
+
+            var adjust = function(){
+                $('.pre').css({
+                    'height' : window.innerHeight,
+                    'width' : window.innerWidth
+                });
+
+                // $('.pre').position('.pre_inner');
+                $.position('.pre','.pre_inner','cr');
+            }
+            
+        </script>
+    </head>
+    <body>
+        <div class="pre">
+            <div class="pre_inner"></div>
+        </div>
+    </body>
+</html>
