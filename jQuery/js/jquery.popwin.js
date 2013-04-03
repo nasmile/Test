@@ -30,8 +30,8 @@
 
 			//填充选区
 			var child = opt.childFunc();
-			//.id
-			body.find('.'+ id +'.popinner').append(child);
+			//.pp1 .popinner注意空格
+			body.find('.'+ id +' .popinner').append(child);
 
 			//设置填充效果
 			if('bottom2top'== opt.effect){
@@ -45,12 +45,12 @@
 					opt.fadeFunc(pp);
 				});
 			}else if('fadeout' == opt.effect){
-				child.css({
-					top:pp.height()
+				child.hide();
+				// child.fadeIn();
+				child.fadeIn("normal",function(){
+					opt.fadeFunc(pp);
 				});
 			}
-			
-			//消失
 		}
 	});
 })(window.jQuery);
