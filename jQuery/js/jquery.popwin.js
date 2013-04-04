@@ -21,12 +21,14 @@
 
 			//给选区设置宽高以及弹出位置
 			var pp=body.find('.pop.'+id);
-			pp.css({
-				'width':opt.width,
-				'height':opt.height
-			});
 
-			body.poppos('.pop.'+id,opt.pos);//浏览器自动调整
+			//fixed 窗口自动调整
+				pp.css({
+					'width':opt.width,
+					'height':opt.height
+				});
+
+				body.poppos('.pop.'+id,opt.pos);//浏览器自动调整
 
 			//填充选区
 			var child = opt.childFunc();
@@ -47,6 +49,7 @@
 			}else if('fadeout' == opt.effect){
 				child.hide();
 				// child.fadeIn();
+				//hide()与fadeIn
 				child.fadeIn("normal",function(){
 					opt.fadeFunc(pp);
 				});
