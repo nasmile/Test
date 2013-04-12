@@ -132,7 +132,7 @@ $(document).ready(function(){
 
 	 //indexOf() lastIndexOf
 	 //第一个参数是要查找的项，第二个参数表示查找起点位置的索引
-	 var numbers = [1,2,3,4,5,4,3,2,1];
+	 // var numbers = [1,2,3,4,5,4,3,2,1];
 	 // alert(numbers.indexOf(4));
 	 // alert(numbers.lastIndexOf(4));
 	 // alert(numbers.indexOf(4,4));
@@ -194,7 +194,7 @@ $(document).ready(function(){
 	 // alert(matches1[0]);
 	 // alert(pattern2.lastIndex);
      
-  //    var matches1 = pattern2.exec(text);
+     //  var matches1 = pattern2.exec(text);
 	 // alert(matches1);
 	 // alert(matches1.index);
 	 // alert(matches1[0]);
@@ -224,7 +224,7 @@ $(document).ready(function(){
 	// alert(num.toPrecision(3));
 
 	//string方法
-	var stringValue = "hello world";
+	// var stringValue = "hello world";
 	// alert(stringValue.charAt(1));    //e
 	// alert(stringValue.charCodeAt(1));   //字符编码
 	// alert(stringValue[1]);
@@ -291,11 +291,27 @@ $(document).ready(function(){
 	// alert(text.split(",",2));
 
     //localeCompare();  字母表
-    var name = "lina";
-    alert(name.localeCompare("xiaohe"));
-    alert(name.localeCompare("lina"));
-    alert(name.localeCompare("laolao"));
+    // var name = "lina";
+    // alert(name.localeCompare("xiaohe"));
+    // alert(name.localeCompare("lina"));
+    // alert(name.localeCompare("laolao"));
 
-    //fromCharCode() charCodeAt()
-    alert(name.charCodeAt());
+    // //fromCharCode() charCodeAt()
+    // alert(name.charCodeAt());
+
+    //闭包
+    var n=99;
+    function f1(){
+    	//this指的是object window
+    	n = 999;
+    	function f2(){
+    		//this指的是object window
+    		alert(n);
+    	}
+    	return f2;
+    }
+
+    // f1();   无输出
+    var result = f1();
+    result();
 });

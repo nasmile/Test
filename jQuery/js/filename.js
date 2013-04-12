@@ -41,9 +41,9 @@ $(document).ready(function(){
 	var  re0 = /\s/;
 	alert(str0.replace(re0,"%"));
 	//多个空白符
-	var str1 = "some            money"；
-	// re1 = /\s+$/;    //caught SyntaxError: Unexpected identifier 
-	// alert(str1.replace(re1,"#"));
+	var str1 = "some            money";
+	re1 = /\s+$/;     
+	alert(str1.replace(re1,"#"));
 	var str2 = "a-bd-c";
 	var re2 = /[^a-z]/i;
 	alert(str2.split(re2));
