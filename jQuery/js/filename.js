@@ -16,7 +16,7 @@ $(document).ready(function(){
 		// var fileExt=(/[.]/.exec(filename)) ? /[^.]+$/.exec(filename.toLowerCase()) : '';
 		// var fileExt = /[.]/.exec(filename);
 		var fileExt = /[^.]+$/.exec(filename.toLowerCase());
-		return fileExt;
+		return "."+fileExt;
 
 	}
 
@@ -37,6 +37,11 @@ $(document).ready(function(){
 	// {n,}  n 是一个非负整数。至少匹配n 次。例如，'o{2,}' 不能匹配 "Bob" 中的 'o'，但能匹配 "foooood" 中的所有 o。'o{1,}' 等价于 'o+'。'o{0,}' 则等价于 'o*'。 
 	// {n,m} m 和 n 均为非负整数，其中n <= m。最少匹配 n 次且最多匹配 m 次。刘， "o{1,3}" 将匹配 "fooooood" 中的前三个 o。'o{0,1}' 等价于 'o?'。请注意在逗号和两个数之间不能有空格。 
 
+	//\b	匹配单词的开始或结束
+	//^     匹配字符串的开始
+    // "^[\\w-]+(\\.[\\w-]+)*@[\\w-]+(\\.[\\w-]+)+$"　　　　//email地址
+    // "^[a-zA-z]+://(\\w+(-\\w+)*)(\\.(\\w+(-\\w+)*))*(\\?\\S*)?$"　　//url 
+
 	var str0 = "some money";
 	var  re0 = /\s/;
 	alert(str0.replace(re0,"%"));
@@ -50,4 +55,7 @@ $(document).ready(function(){
 	var str3 = "My name is 18.Golden age!";
 	var re3 = /\d+/;
 	alert(str.search(re3));
+
+	}
+
 });
