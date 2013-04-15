@@ -1,0 +1,32 @@
+<!-- 
+    Math对象
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>Math对象</title>
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="../css/zui.base.css">
+        <!-- JavaScript -->
+        <script type="text/javascript" src="../lib/jquery.js" ></script>
+        <script type="text/javascript" src="../core/z.js" ></script>
+    </head>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            //min和max的方法
+            var arrays =(3,78,1,68);
+            alert("数组中的最大值："+Math.max(arrays));
+            alert("数组中的最小值："+Math.min(arrays));
+
+            alert("向上舍入："+Math.ceil(25.1));
+            alert("向下舍入："+Math.floor(25.9));
+            alert("标准舍入："+Math.round(25.5));
+
+            //random()方法   返回一个大于等于0小于1的一个随机数
+            //介于2到10之间的数
+            var num = Math.floor(Math.random()*9 + 2 );
+
+        });
+    </script>
+</html>

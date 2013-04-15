@@ -23,7 +23,4 @@ $().ready(function(){
 		// return sum.apply(this,[num1,num2]);
 		return sum.call(this,num1,num2);
 	}
-
-	alert(callSum1(10,10));
-	alert(callSum2(10,10));
 });

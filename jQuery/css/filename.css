@@ -1,0 +1,15 @@
+.filenameT{
+      font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	width: 40%;
+	margin: 50px auto;
+}
+.filenameT th ,.filenameT td{
+	font-size: 1.5em;
+	border: 1px solid #98bf21;
+	padding:3px 7px 2px 7px;
+}
+ #filenameT tr:nth-child(2n)
+{
+      color:#000000;
+      background-color:#EAF2D3;
+}
